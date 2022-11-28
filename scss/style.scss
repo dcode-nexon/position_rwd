@@ -11,6 +11,49 @@ main {
 	background: #111;
 	position: relative;
 	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	p {
+		font-size: 5vw;
+		color: #222;
+	}
+
+	header {
+		width: 90vw;
+		top: 5vh;
+		left: 5vw;
+		position: absolute;
+		z-index: 3;
+		display: flex;
+		justify-content: space-between;
+
+		h1 {
+			font: bold 20px/1 'orbitron';
+			color: #fff;
+			letter-spacing: 2px;
+		}
+
+		nav {
+			display: flex;
+			gap: 100px;
+
+			ul {
+				display: flex;
+				gap: 30px;
+				font: 12px/1 'orbitron';
+				color: #fff;
+				letter-spacing: 2px;
+				opacity: 1;
+
+				&.sns {
+					font-size: 18px;
+					opacity: 0.8;
+				}
+			}
+		}
+	}
 
 	.list {
 		li {
