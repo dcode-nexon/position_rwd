@@ -1,2 +1,203 @@
 @import 'reset';
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Teko:wght@500&display=swap');
+
+$initPos: 40%;
+$wid: 15vw;
+$ht: 40vh;
+
+main {
+	width: 100%;
+	height: 100vh;
+	background: #111;
+	position: relative;
+	overflow: hidden;
+
+	.list {
+		li {
+			width: $wid;
+			height: $ht;
+			position: fixed;
+			top: 40%;
+			transition: 1s;
+			transition-timing-function: cubic-bezier(0.89, -0.01, 0.28, 1.02);
+			z-index: 2;
+			padding: 20px;
+			opacity: 1;
+			transform: scale(1);
+
+			.inner {
+				width: 100%;
+				height: 100%;
+				background: #333;
+				padding: 20px;
+				border-radius: 15px;
+				box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+				overflow: hidden;
+				transition: 1s;
+				position: relative;
+				display: flex;
+				align-items: center;
+
+				h2 {
+					font: normal 20px/1 'teko';
+					color: #888;
+					position: relative;
+					top: 10%;
+					transition: 0.5s 0.5s;
+
+					&::before {
+						content: '';
+						display: block;
+						width: 20px;
+						height: 3px;
+						background: #888;
+						margin-bottom: 10px;
+						transition: 0.5s;
+					}
+				}
+			}
+		}
+
+		//리스트 순서별 모양
+		li {
+			&:nth-of-type(1) {
+				left: 0;
+				width: 100%;
+				height: 100%;
+				padding: 0px;
+				top: 0;
+				opacity: 0;
+				z-index: 1;
+				transform: scale(2);
+				transition: all 1s 1s, transform 2.5s 0s;
+
+				.inner {
+					box-shadow: none;
+					border-radius: 0px;
+				}
+			}
+
+			&:nth-of-type(2) {
+				left: 0;
+				width: 100%;
+				height: 100%;
+				padding: 0px;
+				opacity: 1;
+				top: 0;
+				z-index: 2;
+
+				.inner {
+					background: #222;
+					box-shadow: none;
+					border-radius: 0px;
+					padding: 5vw;
+
+					h2 {
+						color: #fff;
+						font-size: 8vw;
+
+						&::before {
+							background: #fff;
+							height: 6px;
+							width: 6vw;
+							margin-bottom: 20px;
+						}
+					}
+				}
+			}
+			&:nth-of-type(3) {
+				left: calc($initPos + $wid * 0);
+				transition-delay: 0s;
+			}
+			&:nth-of-type(4) {
+				left: calc($initPos + $wid * 1);
+				transition-delay: 0.1s;
+			}
+			&:nth-of-type(5) {
+				left: calc($initPos + $wid * 2);
+				transition-delay: 0.2s;
+			}
+			&:nth-of-type(6) {
+				left: calc($initPos + $wid * 3);
+				transition-delay: 0.3s;
+			}
+			&:nth-of-type(7) {
+				left: calc($initPos + $wid * 4);
+				transition-delay: 0.4s;
+			}
+			&:nth-of-type(8) {
+				left: calc($initPos + $wid * 5);
+				transition-delay: 0.5s;
+			}
+		}
+	}
+
+	.navi {
+		width: calc(60% - 60px);
+		position: absolute;
+		left: 40%;
+		top: calc(40% + 40vh + 20px);
+		z-index: 3;
+		padding-left: 20px;
+
+		.prev,
+		.next {
+			display: inline-block;
+			width: 70px;
+			height: 70px;
+			border: 1px solid #bbb;
+			border-radius: 50%;
+			position: relative;
+			cursor: pointer;
+			margin-right: 20px;
+
+			&::before,
+			&::after {
+				content: '';
+				display: block;
+				width: 17px;
+				height: 2px;
+				background: #fff;
+				position: absolute;
+			}
+			&::before {
+				top: 49%;
+				transform: rotate(45deg) translateX(0px);
+			}
+			&::after {
+				bottom: 49%;
+				transform: rotate(-45deg) translateX(0px);
+			}
+			span {
+				width: 20px;
+				height: 2px;
+				background: #fff;
+				position: absolute;
+				top: 49%;
+				opacity: 1;
+			}
+		}
+
+		//좌우버튼 방향에따른 스타일 변경 (호버포함)
+		.prev {
+			&::before,
+			&::after {
+				left: 25px;
+				transform-origin: left center;
+			}
+			span {
+				left: 25px;
+			}
+		}
+		.next {
+			&::before,
+			&::after {
+				right: 25px;
+				transform-origin: right center;
+			}
+			span {
+				right: 25px;
+			}
+		}
+	}
+}
