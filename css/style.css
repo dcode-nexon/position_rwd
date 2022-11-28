@@ -175,6 +175,10 @@ main .navi .next span {
   top: 49%;
   opacity: 1;
 }
+main .navi .prev.on,
+main .navi .next.on {
+  animation: wrap 0.3s 1;
+}
 main .navi .prev::before, main .navi .prev::after {
   left: 25px;
   transform-origin: left center;
@@ -182,12 +186,77 @@ main .navi .prev::before, main .navi .prev::after {
 main .navi .prev span {
   left: 25px;
 }
+main .navi .prev.on span {
+  animation: middlePrev 0.5s 1;
+}
 main .navi .next::before, main .navi .next::after {
   right: 25px;
   transform-origin: right center;
 }
 main .navi .next span {
   right: 25px;
+}
+main .navi .next.on span {
+  animation: middleNext 0.5s 1;
+}
+
+@keyframes wrap {
+  0% {
+    transform: scale(1);
+    border: 1px solid white;
+  }
+  70% {
+    transform: scale(2);
+    border: 1px solid rgba(255, 255, 255, 0);
+  }
+  100% {
+    transform: scale(1);
+    border: 1px solid white;
+  }
+}
+@keyframes middleNext {
+  0% {
+    right: 25px;
+    witth: 20px;
+    opacity: 1;
+  }
+  70% {
+    right: -30px;
+    width: 50px;
+    opacity: 0;
+  }
+  71% {
+    right: 100px;
+    width: 120px;
+    opacity: 0;
+  }
+  100% {
+    right: 25px;
+    width: 20px;
+    opacity: 1;
+  }
+}
+@keyframes middlePrev {
+  0% {
+    left: 25px;
+    witth: 20px;
+    opacity: 1;
+  }
+  70% {
+    left: -30px;
+    width: 50px;
+    opacity: 0;
+  }
+  71% {
+    left: 100px;
+    width: 120px;
+    opacity: 0;
+  }
+  100% {
+    left: 25px;
+    width: 20px;
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
