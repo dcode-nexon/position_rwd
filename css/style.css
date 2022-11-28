@@ -295,5 +295,133 @@ main .navi .next.on span {
     opacity: 1;
   }
 }
+@media screen and (max-width: 1279px) {
+  main .list li .inner {
+    border-radius: 10px;
+  }
+  main .navi {
+    transform-origin: right top;
+    transform: scale(0.8);
+  }
+}
+@media screen and (max-width: 979px) {
+  main header .gnb {
+    display: none;
+  }
+  main .list li {
+    width: 20vw;
+  }
+  main .list li:nth-of-type(3) {
+    left: calc(45% + 0vw);
+    transition-delay: 0s;
+  }
+  main .list li:nth-of-type(4) {
+    left: calc(45% + 20vw);
+    transition-delay: 0.1s;
+  }
+  main .list li:nth-of-type(5) {
+    left: calc(45% + 40vw);
+    transition-delay: 0.2s;
+  }
+  main .list li:nth-of-type(6) {
+    left: calc(45% + 60vw);
+    transition-delay: 0.3s;
+  }
+  main .list li:nth-of-type(7) {
+    left: calc(45% + 80vw);
+    transition-delay: 0.4s;
+  }
+  main .list li:nth-of-type(8) {
+    left: calc(45% + 100vw);
+    transition-delay: 0.5s;
+  }
+  main .navi {
+    transform-origin: right top;
+    transform: scale(0.5);
+  }
+}
+@media screen and (max-width: 739px) {
+  main .list li {
+    width: 30vw;
+  }
+  main .list li:nth-of-type(3) {
+    left: calc(45% + 0vw);
+    transition-delay: 0s;
+  }
+  main .list li:nth-of-type(4) {
+    left: calc(45% + 30vw);
+    transition-delay: 0.1s;
+  }
+  main .list li:nth-of-type(5) {
+    left: calc(45% + 60vw);
+    transition-delay: 0.2s;
+  }
+  main .list li:nth-of-type(6) {
+    left: calc(45% + 90vw);
+    transition-delay: 0.3s;
+  }
+  main .list li:nth-of-type(7) {
+    left: calc(45% + 120vw);
+    transition-delay: 0.4s;
+  }
+  main .list li:nth-of-type(8) {
+    left: calc(45% + 150vw);
+    transition-delay: 0.5s;
+  }
+  main .navi {
+    transform-origin: right top;
+    transform: scale(0.8);
+  }
+}
+@media screen and (max-width: 539px) {
+  main header h1 {
+    padding-left: 20px;
+  }
+  main .list li {
+    width: 50vw;
+    height: 160px;
+    top: 60%;
+  }
+  main .list li:nth-of-type(2) .inner h2 {
+    top: 0%;
+    padding-left: 5vw;
+    font-size: 15vw;
+  }
+  main .list li:nth-of-type(2) .inner h2::before {
+    width: 20vw;
+  }
+  main .list li:nth-of-type(3) {
+    left: calc(20px + 0vw);
+    transition-delay: 0s;
+  }
+  main .list li:nth-of-type(4) {
+    left: calc(20px + 50vw);
+    transition-delay: 0.1s;
+  }
+  main .list li:nth-of-type(5) {
+    left: calc(20px + 100vw);
+    transition-delay: 0.2s;
+  }
+  main .list li:nth-of-type(6) {
+    left: calc(20px + 150vw);
+    transition-delay: 0.3s;
+  }
+  main .list li:nth-of-type(7) {
+    left: calc(20px + 200vw);
+    transition-delay: 0.4s;
+  }
+  main .list li:nth-of-type(8) {
+    left: calc(20px + 250vw);
+    transition-delay: 0.5s;
+  }
+  main .navi {
+    width: 80%;
+    left: 10%;
+    top: auto;
+    bottom: 10px;
+    transform-origin: right top;
+    transform: scale(0.6);
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
